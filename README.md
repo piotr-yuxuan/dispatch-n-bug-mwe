@@ -21,12 +21,14 @@ Figwheel will automatically push cljs changes to the browser.
 
 ## Aw, found it!
 
-It's pretty straightforward, events are interleaved:
+It's pretty straightforward, events are *not* interleaved:
 
 - `[::events/action]`
 - `[::events/action-trigger 1]`
-- `[::events/action-db 1]`
 - `[::events/action-trigger 1]`
 - `[::events/action-db 1]`
+- `[::events/action-db 1]`
 
-OK, it's explained, but it's a bit misleading at first sight.
+OK, it's explained, but it's been a bit misleading at first sight.
+
+As a takeaway, I will remember that re-frame events are put in a queue and sequentially dispatched. Any avent is appended to the tail of the queue. It's a strong invariant. Sometimes it can be a bit misleading (like this example) but it's a good thing to rely on.
