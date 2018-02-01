@@ -18,3 +18,15 @@ lein figwheel
 Wait a bit, then browse to [http://localhost:3449](http://localhost:3449).
 
 Figwheel will automatically push cljs changes to the browser.
+
+## Aw, found it!
+
+It's pretty straightforward, events are interleaved:
+
+- `[::events/action]`
+- `[::events/action-trigger 1]`
+- `[::events/action-db 1]`
+- `[::events/action-trigger 1]`
+- `[::events/action-db 1]`
+
+OK, it's explained, but it's a bit misleading at first sight.
