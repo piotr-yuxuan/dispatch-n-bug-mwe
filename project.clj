@@ -1,10 +1,10 @@
 (defproject dispatch-n-bug-mwe "0.1.0-SNAPSHOT"
-  :dependencies [[org.clojure/clojure "1.8.0"]
-                 [org.clojure/clojurescript "1.9.908"]
-                 [reagent "0.7.0"]
-                 [re-frame "0.10.2"]]
+  :dependencies [[org.clojure/clojure "1.10.0-alpha2"]
+                 [org.clojure/clojurescript "1.9.946"]
+                 [reagent "0.8.0-alpha2"]
+                 [re-frame "0.10.4"]]
 
-  :plugins [[lein-cljsbuild "1.1.5"]]
+  :plugins [[lein-cljsbuild "1.1.7"]]
 
   :min-lein-version "2.5.3"
 
@@ -16,9 +16,9 @@
 
   :profiles
   {:dev
-   {:dependencies [[binaryage/devtools "0.9.4"]]
+   {:dependencies [[binaryage/devtools "0.9.9"]]
 
-    :plugins      [[lein-figwheel "0.5.13"]]}}
+    :plugins      [[lein-figwheel "0.5.15-SNAPSHOT"]]}}
 
   :cljsbuild
   {:builds
